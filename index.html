@@ -6,57 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Breathing Blobs | Axel Valdez</title>
     <style>
-        .blob{
-            border-radius: 50%;
-            animation-name: breathe;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-duration: 4s;
-            animation-timing-function: ease-in-out;
-            mix-blend-mode: multiply;
-            opacity: 0;
-        }
-
-        @keyframes breathe{
-            0%{
-                transform: scale(1);
-                opacity: 1;
-            }
-            100%{
-                transform: scale(1.5);
-                opacity: 1;
-            }
+        body{
+          margin: 0;
         }
     </style>
 </head>
 <body>
-    
-    <script>
-        const screenW = window.innerWidth;
-        const screenH = window.innerHeight;
-        const maxSize = screenW / 6;
-        const spacing = screenW / 100;
-        
-
-        for(x = 0 - maxSize; x <= screenW; x = x + spacing){
-            var circle = document.createElement('div');
-            const top = Math.round(Math.random() * 10) + 30;
-            const left = x;
-            const size = Math.random() * maxSize;
-            const delay = Math.random() * 5;
-            const color = (360 * left) / screenW;
-
-            circle.style.position = 'absolute';
-            circle.style.top = top + '%'; //variation goes here
-            circle.style.left = left + 'px'; //variation goes here
-            circle.style.transform = 'translateY(-50%)';
-            circle.style.width = size + 'px';
-            circle.style.height = size + 'px';
-            circle.style.animationDelay = delay + 's';
-            circle.style.background = `hsl(${color}, 100%, 50%)`;
-            circle.classList.add('blob');
-            document.querySelector('body').appendChild(circle); 
-        }
-    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+    <script src="blobs.js"></script>
 </body>
 </html>
